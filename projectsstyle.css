@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    background-color: #303030;
+    height: 1000px;
+    
+   
+}
+
+
+.header {
+     background-color: #1e1e1e;
+    color: white;
+    padding: 10px;
+    text-align: center; 
+    padding-left: 30px;  
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    text-decoration:none;
+    
+}
+.nav{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    padding-right: 60px;
+   
+}
+.contact{
+    transition: 0.7s ease-in;
+     text-decoration:none;
+     color: white;
+    
+}
+.resume{
+    padding-right: 40px;
+    transition: 0.7s ease-in;
+     text-decoration:none;
+          color: white;
+
+}
+.project{
+        padding-right: 40px;
+
+    transition: 0.7s ease-in;
+     text-decoration:none;
+          color: white;
+
+}
+.contact:hover{
+    color: aqua;
+    cursor: pointer;
+}
+.resume:hover{
+    color: aqua;
+    cursor: pointer;
+}
+.project:hover{
+    color: aqua;
+    cursor: pointer;
+}

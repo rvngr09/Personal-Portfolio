@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    background-color: #303030;
+    height: 1000px;
+    
+   
+}
+
+
+.header {
+     background-color: #1e1e1e;
+    color: white;
+    padding: 10px;
+    text-align: center; 
+    padding-left: 30px;  
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    text-decoration:none;
+    
+}
+.nav{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    padding-right: 60px;
+   
+}
+.contact{
+    transition: 0.7s ease-in;
+     text-decoration:none;
+     color: white;
+    
+}
+.resume{
+    padding-right: 40px;
+    transition: 0.7s ease-in;
+     text-decoration:none;
+          color: white;
+
+}
+.project{
+        padding-right: 40px;
+
+    transition: 0.7s ease-in;
+     text-decoration:none;
+          color: white;
+
+}
+.contact:hover{
+    color: aqua;
+    cursor: pointer;
+}
+.resume:hover{
+    color: aqua;
+    cursor: pointer;
+}
+.project:hover{
+    color: aqua;
+    cursor: pointer;
+}
+.introduction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px; /* Space between text and image */
+    padding: 40px 5%; /* Adjust padding as needed */
+}
+
+.intro-text {
+    color: white;
+    flex: 1;
+    max-width: 500px; /* Control text width */
+    font-size: 25px;
+}
+
+.image {
+    margin-left: 200px;
+    width: 400px; /* Adjust image size */
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5%; /* Makes it circular - remove if not wanted */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional shadow */
+}
+
+.bigprojects{
+    font-size: 21px;
+    color: white;
+    display: flex;          /* Enables flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    text-align: center;      /* Ensures text alignment */
+     border-top: 1px solid rgb(94, 93, 93); /* Thin line above */
+    border-bottom: 1px solid rgb(94, 93, 93); /* Thin line below */
+      
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .introduction {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .image {
+        order: -1; /* Moves image above text on mobile */
+        margin-bottom: 20px;
+    }
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(152, 151, 151, 0.1);
+  transition: transform 0.3s ease;
+  color: #9c9a9a;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+    background-color: #515151;
+  padding: 15px;
+}
+
+.card-title {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.card-text {
+  margin: 0 0 15px 0;
+  color: #ffffff;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.image{
+width: 200px;
+  height: 250px;
+}
+
