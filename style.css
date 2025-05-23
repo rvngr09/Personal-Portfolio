@@ -142,48 +142,62 @@ body {
     font-weight: 100px;
 }
 .mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
 }
 
-/* Mobile styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
-  .header {
-    flex-wrap: wrap;
-    padding: 15px 5%;
-  }
-  
-  .mobile-menu-btn {
-    display: block; /* Show hamburger */
-    order: 1; /* Position after name */
-  }
-  
-  .NAMETAG {
-    order: 0; /* Name comes first */
-    width: calc(100% - 40px); /* Make space for button */
-  }
-  
-  .nav {
-    display: none; /* Hide nav by default */
-    width: 100%;
-    order: 2; /* Comes after button */
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 15px;
-  }
-  
-  .nav.active {
-    display: flex; /* Show when active */
-  }
-  
-  .nav a {
-    padding: 10px 0;
-    border-bottom: 1px solid #515151;
-  }
+    .header {
+        flex-wrap: wrap;
+        padding: 15px 5%;
+        position: relative; /* For absolute positioning of dropdown */
+    }
+    
+    .mobile-menu-btn {
+        display: block; /* Show hamburger button */
+        order: 1;
+        margin-left: auto; /* Push to the right */
+    }
+    
+    .nav {
+        display: none; /* Hide nav by default */
+        width: 100%;
+        flex-direction: column;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        padding: 0 5%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .nav.active {
+        display: flex; /* Show when active */
+    }
+    
+    .nav a {
+        padding: 15px 0;
+        border-bottom: 1px solid #333;
+    }
+    
+    .nav a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Desktop Styles (unchanged) */
+@media (min-width: 769px) {
+    .nav {
+        display: flex !important; /* Force show on desktop */
+        gap: 20px;
+    }
 }
 
 /* Tablet Styles (768px and up) */
