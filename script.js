@@ -12,15 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-const btn = document.querySelector('.mobile-menu-btn');
-const nav = document.querySelector('.nav');
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.nav');
 
-btn.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent closing immediately
+    nav.classList.toggle('active');
+  });
 
-document.addEventListener('click', (e) => {
-  if (!nav.contains(e.target) && e.target !== btn) {
-    nav.classList.remove('active');
-  }
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && e.target !== btn) {
+      nav.classList.remove('active');
+    }
+  });
 });

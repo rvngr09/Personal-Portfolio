@@ -153,6 +153,9 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    header{
+        justify-content: space-between;
+    }
     .header {
         flex-wrap: wrap;
         padding: 15px 5%;
