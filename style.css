@@ -141,6 +141,50 @@ body {
     font-size: 25px;
     font-weight: 100px;
 }
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 15px 5%;
+  }
+  
+  .mobile-menu-btn {
+    display: block; /* Show hamburger */
+    order: 1; /* Position after name */
+  }
+  
+  .NAMETAG {
+    order: 0; /* Name comes first */
+    width: calc(100% - 40px); /* Make space for button */
+  }
+  
+  .nav {
+    display: none; /* Hide nav by default */
+    width: 100%;
+    order: 2; /* Comes after button */
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 15px;
+  }
+  
+  .nav.active {
+    display: flex; /* Show when active */
+  }
+  
+  .nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid #515151;
+  }
+}
 
 /* Tablet Styles (768px and up) */
 @media (min-width: 768px) {
