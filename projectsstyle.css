@@ -65,3 +65,79 @@ body {
     color: aqua;
     cursor: pointer;
 }
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .nav {
+        margin-top: 0;
+        font-size: 1.1rem;
+    }
+    
+    .introduction {
+        flex-direction: row;
+        text-align: left;
+        gap: 3rem;
+    }
+    
+    .intro-text {
+        order: 1;
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+    
+    .image {
+        order: 2;
+        width: 250px;
+        height: 250px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    .header {
+        padding: 1.5rem 10%;
+    }
+    
+    .introduction {
+        padding: 3rem 10%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .image {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 10%;
+    }
+    
+    .bigprojects {
+        max-width: 1200px;
+        margin: 0 auto 2rem;
+    }
+}
+
+/* Large Desktop (for your 400px image) */
+@media (min-width: 1400px) {
+    .image {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
