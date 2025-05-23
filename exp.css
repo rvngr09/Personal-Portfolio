@@ -135,7 +135,133 @@ body {
 .card-button:hover {
     background-color: #0056b3;
 }
+.end {
+    display: flex;
+    justify-content: space-between; /* This pushes children to opposite sides */
+    padding: 2rem 5%;
+    gap: 1.5rem;
+}
 
+.backend, .frontend {
+    width: 48%; /* Give them slightly less than half width to account for gap */
+    padding: 1.5rem;
+    background-color: #515151; /* Matching your card style */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(152, 151, 151, 0.1);
+    transition: transform 0.5s ease-out;
+}
+
+/* Optional: Add hover effects like your cards */
+.backend:hover, .frontend:hover {
+    transform: translateY(-10px);
+    transition: transform 0.5s ease-in-out;
+}
+.javalevel{
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+}
+.bar {
+  width: 100%;
+  height: 8px;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.progressbar {
+  height: 100%;
+  
+  background-color: #007BFF;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.clevel{
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+}
+.cbar {
+  width: 100%;
+  height: 8px;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.cprogressbar {
+  height: 100%;
+  
+  background-color: #007BFF;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.pylevel{
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+}
+.pybar {
+  width: 100%;
+  height: 8px;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.pyprogressbar {
+  height: 100%;
+  
+  background-color: #007BFF;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.sqllevel{
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+}
+.sqlbar {
+  width: 100%;
+  height: 8px;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.sqlprogressbar {
+  height: 100%;
+  
+  background-color: #007BFF;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.weblevel{
+    display: flex;
+    justify-content:space-between;
+    gap: 10px;
+}
+.webbar {
+  width: 100%;
+  height: 8px;
+  background-color: #bfbfbf;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.webprogressbar {
+  height: 100%;
+  
+  background-color: #007BFF;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
 /* Tablet Styles (768px and up) */
 @media (min-width: 768px) {
     .header {
@@ -170,6 +296,8 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
 
 /* Desktop Styles (1024px and up) */
 @media (min-width: 1024px) {
