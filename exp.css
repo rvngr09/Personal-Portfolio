@@ -262,6 +262,12 @@ body {
   border-radius: 4px;
   transition: width 0.5s ease;
 }
+.home{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 100px;
+}
 /* Tablet Styles (768px and up) */
 @media (min-width: 768px) {
     .header {

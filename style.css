@@ -135,6 +135,12 @@ body {
 .card-button:hover {
     background-color: #0056b3;
 }
+.home{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 100px;
+}
 
 /* Tablet Styles (768px and up) */
 @media (min-width: 768px) {
