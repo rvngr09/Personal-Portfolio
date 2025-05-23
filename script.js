@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-    document.querySelector('.nav').classList.toggle('active');
+const btn = document.querySelector('.mobile-menu-btn');
+const nav = document.querySelector('.nav');
+
+btn.addEventListener('click', () => {
+  nav.classList.toggle('active');
 });
 
-// Close menu when clicking outside
-document.addEventListener('click', function(event) {
-    const nav = document.querySelector('.nav');
-    const btn = document.querySelector('.mobile-menu-btn');
-    if (!nav.contains(event.target) && event.target !== btn) {
-        nav.classList.remove('active');
-    }
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && e.target !== btn) {
+    nav.classList.remove('active');
+  }
 });
