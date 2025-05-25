@@ -86,7 +86,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 2rem 5%;
+    padding: 1rem 5%;
 }
 
 .card {
@@ -153,13 +153,12 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    header{
-        justify-content: space-between;
-    }
+    
     .header {
         flex-wrap: wrap;
         padding: 15px 5%;
         position: relative; /* For absolute positioning of dropdown */
+        justify-content: space-between;
     }
     
     .mobile-menu-btn {
@@ -169,7 +168,7 @@ body {
     }
     
     .nav {
-        display: none; /* Hide nav by default */
+        display: none; 
         width: 100%;
         flex-direction: column;
         background-color: #1e1e1e;
@@ -179,14 +178,16 @@ body {
         z-index: 100;
         padding: 0 5%;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: 0.7s ease-out;
     }
     
     .nav.active {
         display: flex; /* Show when active */
+        transition: 0.7s ease-in;
     }
     
     .nav a {
-        padding: 15px 0;
+        padding: 10px 0;
         border-bottom: 1px solid #333;
     }
     
