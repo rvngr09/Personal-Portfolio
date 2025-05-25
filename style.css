@@ -15,6 +15,7 @@ body {
 }
 
 /* Header Styles */
+
 .header {
     background-color: #1e1e1e;
     padding: 1rem 5%;
@@ -155,17 +156,48 @@ body {
 @media (max-width: 768px) {
     
     .header {
-        flex-wrap: wrap;
-        padding: 15px 5%;
-        position: relative; /* For absolute positioning of dropdown */
-        justify-content: space-between;
-    }
-    
-    .mobile-menu-btn {
-        display: block; /* Show hamburger button */
-        order: 1;
-        margin-left: auto; /* Push to the right */
-    }
+    background-color: #1e1e1e;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.name-and-menu {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  gap: 10px; /* Space between name and button */
+}
+
+.home {
+    text-decoration: none;
+    color: white;
+  margin: 0; /* Remove default h1 margins */
+  padding: 0;
+  line-height: 1; /* Tight line height */
+  font-size: 1.8rem; /* Adjust as needed */
+}
+
+
+.mobile-menu-btn {
+    background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
     
     .nav {
         display: none; 
