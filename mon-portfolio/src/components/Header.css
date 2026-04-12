@@ -1,0 +1,46 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Hamburger hidden on desktop */
+.drawer-container {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+  .drawer-container {
+    display: block;
+    color: #153243;
+  }
+
+  .nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0;
+
+    /* Hidden by default */
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a,
+  .nav button {
+    width: 100%;
+    text-align: center;
+  }
+}
