@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom"; // ← Changé : createHashRouter au lieu de createBrowserRouter
 import FacebookCircularProgress from "../components/LoadingSpinner.jsx";
-import { Password } from "@mui/icons-material";
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
+
 const Home = React.lazy(() => import("../pages/Home.jsx"));
 
 const PageLoader = () => (
@@ -12,6 +12,7 @@ const PageLoader = () => (
         <FacebookCircularProgress />
     </div>
 );
+
 const ErrorPage = () => (
     <div style={{ textAlign: "center", padding: "50px" }}>
         <h2>404 - Page Not Found</h2>
@@ -33,8 +34,17 @@ const ErrorPage = () => (
     </div>
 );
 
-export const router = createBrowserRouter([
-   {
+export const router = createHashRouter([  // ← Changé : createHashRouter
+    {
+        path: "/",
+        element: (
+            <Suspense fallback={<PageLoader />}>
+                <Home />
+            </Suspense>
+        ),
+        errorElement: <ErrorPage />,
+    },
+    {
         path: "/about-me",
         element: (
             <Suspense fallback={<PageLoader />}>
@@ -43,4 +53,5 @@ export const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
     },
+    // Ajoute tes autres routes ici
 ]);
