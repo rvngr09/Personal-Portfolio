@@ -43,10 +43,10 @@ const GLOBAL_CSS = `
     --line2: rgba(255,255,255,0.12);
     --text: #c8c8d8;
     --text2: #7a7a90;
-    --text3: #4a4a60;
+    --text3: #e8e8f3;
     --h: #f0f0f8;
     --accent: #e8d5ff;
-    --accent2: #b388ff;
+    --accent2: #b790fa;
     --accent3: #7c4dff;
     --teal: #64ffda;
     --amber: #ffd740;
@@ -898,6 +898,7 @@ export default function Home() {
               style={{
                 fontSize: 12,
                 fontWeight: 700,
+                color:"white",
                 letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 color: i % 6 === 0 ? "var(--accent2)" : "var(--text3)",

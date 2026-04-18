@@ -466,11 +466,11 @@ export default function EnhancedThreeBackground() {
         <hemisphereLight args={['#2a1a4f', '#0a0a1f', 0.45]} />
 
         {/* === 3D ELEMENTS === */}
-        <CameraController />
-        <OuterRings />
+        {/* <CameraController /> */}
+        {/* <OuterRings /> */}
         <AuraParticles />
         <GlowingOrbs />
-        <FloatingCrystal />
+        {/* <FloatingCrystal /> */}
         <DustParticles />
         <MouseCursor />
 
