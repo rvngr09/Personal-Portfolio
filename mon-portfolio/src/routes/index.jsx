@@ -6,6 +6,11 @@ import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Home = React.lazy(() => import("../pages/Home.jsx"));
+const Contacts = React.lazy(() => import("../pages/Contact.jsx"));
+const Experience = React.lazy(() => import("../pages/Experiences.jsx"));
+const Projects = React.lazy(() => import("../pages/Projects.jsx"));
+const Resume = React.lazy(() => import("../pages/Resume.jsx"));
+const CommingSoon = React.lazy(() => import ("../pages/CommingSoon.jsx"));
 
 const PageLoader = () => (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60vh" }}>
@@ -34,24 +39,64 @@ const ErrorPage = () => (
     </div>
 );
 
-export const router = createHashRouter([  // ← Changé : createHashRouter
-    {
-        path: "/",
-        element: (
-            <Suspense fallback={<PageLoader />}>
-                <Home />
-            </Suspense>
-        ),
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: "/about-me",
-        element: (
-            <Suspense fallback={<PageLoader />}>
-                <Home />
-            </Suspense>
-        ),
-        errorElement: <ErrorPage />,
-    },
-    // Ajoute tes autres routes ici
+export const router = createHashRouter([
+  {
+    path: "/",
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <Home />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  
+  {
+    path: "/resume",
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <Resume />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/contacts",
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <Contacts />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/projects",
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <Projects />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/experiences",
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <Experience />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/comming-soon",
+    element: (
+      <Suspense fallback={<PageLoader />}>
+        <CommingSoon />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace />,
+  },
 ]);
