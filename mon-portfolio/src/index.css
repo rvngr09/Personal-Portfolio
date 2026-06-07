@@ -118,6 +118,33 @@ body {
   &::after  { right: -1px; }
 }
 
+/* Full-width pages (new redesign) */
+#root:has(.page-home),
+#root:has(.page-contact),
+#root:has(.page-projects),
+#root:has(.page-experiences),
+#root:has(.page-resume),
+#root:has(.page-comingsoon) {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  border-inline: none;
+}
+#root:has(.page-home)::before,
+#root:has(.page-home)::after,
+#root:has(.page-contact)::before,
+#root:has(.page-contact)::after,
+#root:has(.page-projects)::before,
+#root:has(.page-projects)::after,
+#root:has(.page-experiences)::before,
+#root:has(.page-experiences)::after,
+#root:has(.page-resume)::before,
+#root:has(.page-resume)::after,
+#root:has(.page-comingsoon)::before,
+#root:has(.page-comingsoon)::after {
+  display: none;
+}
+
 /* ── Headings ── */
 h1, h2, h3 {
   font-family: var(--heading);

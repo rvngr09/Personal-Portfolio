@@ -26,7 +26,7 @@ import {
 import EnhancedThreeBackground from '../components/EnhancedThreeBackground';
 let aminePhoto = null;
 try {
-  aminePhoto = new URL("../assets/me.jpg", import.meta.url).href;
+  aminePhoto = new URL("../assets/me2.jpg", import.meta.url).href;
 } catch (_) {}
 
 /* ─────────────────────────── GLOBAL STYLES ─────────────────────────── */
@@ -97,6 +97,32 @@ const GLOBAL_CSS = `
 
   /* Float orb */
   @keyframes floatOrb { 0%, 100% { transform: translateY(0) scale(1) } 50% { transform: translateY(-28px) scale(1.04) } }
+
+  @media (max-width: 1024px) {
+    .page-home section { padding-left: 28px !important; padding-right: 28px !important; }
+    .page-home footer { padding-left: 28px !important; padding-right: 28px !important; }
+    .page-home .hero-avatar-desktop { display: none !important; }
+    .page-home .hero-avatar-mobile { display: flex !important; }
+    .page-home .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  }
+  @media (max-width: 768px) {
+    .page-home section { padding-left: 16px !important; padding-right: 16px !important; padding-top: 60px !important; padding-bottom: 60px !important; }
+    .page-home .hero-grid { gap: 32px !important; }
+    .page-home .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .page-home .about-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
+    .page-home .projects-grid { grid-template-columns: 1fr !important; }
+    .page-home .marquee-wrap { padding: 12px 0 !important; }
+    .page-home .stats-stat { padding: 24px 16px !important; }
+    .page-home .stats-stat .stat-num { font-size: 40px !important; }
+    .page-home footer { flex-direction: column !important; gap: 16px !important; text-align: center !important; padding: 24px 16px !important; }
+    .page-home .skills-header { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+    .page-home .skills-header p { text-align: left !important; max-width: 100% !important; }
+    .page-home .projects-header { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+  }
+  @media (max-width: 480px) {
+    .page-home section { padding-left: 12px !important; padding-right: 12px !important; }
+    .page-home .stats-grid { grid-template-columns: 1fr !important; }
+  }
 `;
 
 /* ─────────────────────────── DATA ─────────────────────────── */
@@ -384,6 +410,7 @@ export default function Home() {
     
     <div
       ref={root}
+      className="page-home"
       style={{
         fontFamily: "var(--sans)",
         background: "var(--ink)",
@@ -479,6 +506,7 @@ export default function Home() {
         />
 
         <div
+          className="hero-grid"
           style={{
             maxWidth: 1280,
             margin: "0 auto",
@@ -530,6 +558,75 @@ export default function Home() {
                   boxShadow: "0 0 12px #22c55e",
                 }}
               />
+            </div>
+
+            {/* Mobile avatar row (hidden on desktop) */}
+            <div
+              className="hero-avatar-mobile"
+              style={{
+                display: "none",
+                alignItems: "center",
+                gap: 16,
+                marginBottom: 24,
+              }}
+            >
+              <div
+                style={{
+                  width: 72,
+                  height: 72,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  border: "2px solid rgba(124,77,255,0.4)",
+                  flexShrink: 0,
+                  boxShadow: "0 0 20px rgba(124,77,255,0.3)",
+                }}
+              >
+                {aminePhoto ? (
+                  <img
+                    src={aminePhoto}
+                    alt="Amine"
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      background: "var(--surface2)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 24,
+                      fontFamily: "var(--serif)",
+                      color: "var(--accent2)",
+                    }}
+                  >
+                    A
+                  </div>
+                )}
+              </div>
+              <div>
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    color: "var(--accent2)",
+                  }}
+                >
+                  Amine Benallal
+                </div>
+                <div
+                  style={{
+                    fontSize: 13,
+                    color: "var(--text2)",
+                    marginTop: 2,
+                  }}
+                >
+                  Full-Stack Developer
+                </div>
+              </div>
             </div>
 
             <h1
@@ -651,13 +748,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — avatar */}
+          {/* Right — avatar (desktop) */}
           <div
-            className="hero-avatar"
+            className="hero-avatar hero-avatar-wrap hero-avatar-desktop"
             style={{ opacity: 0, position: "relative" }}
           >
             {/* Outer decorative ring */}
             <div
+              className="avatar-ring"
               style={{
                 position: "absolute",
                 inset: -24,
@@ -667,6 +765,7 @@ export default function Home() {
               }}
             />
             <div
+              className="avatar-ring"
               style={{
                 position: "absolute",
                 inset: -12,
@@ -677,6 +776,7 @@ export default function Home() {
 
             {/* Avatar */}
             <div
+              className="avatar-ring"
               style={{
                 width: 360,
                 height: 360,
@@ -723,6 +823,7 @@ export default function Home() {
 
             {/* Floating badge */}
             <div
+              className="hero-avatar-badge"
               style={{
                 position: "absolute",
                 bottom: 24,
@@ -772,6 +873,7 @@ export default function Home() {
             </div>
 
             <div
+              className="hero-avatar-stack"
               style={{
                 position: "absolute",
                 top: 20,
@@ -834,6 +936,7 @@ export default function Home() {
         }}
       >
         <div
+          className="stats-grid"
           style={{
             maxWidth: 1280,
             width: "100%",
@@ -844,7 +947,7 @@ export default function Home() {
           {STATS.map((s, i) => (
             <div
               key={s.label}
-              className="stat-card"
+              className="stat-card stats-stat"
               style={{
                 opacity: 0,
                 padding: "36px 20px",
@@ -853,6 +956,7 @@ export default function Home() {
               }}
             >
               <div
+                className="stat-num"
                 style={{
                   fontFamily: "var(--serif)",
                   fontSize: 52,
@@ -881,13 +985,14 @@ export default function Home() {
 
       {/* ════════════════════ MARQUEE ════════════════════ */}
       <div
-        style={{
-          borderBottom: "1px solid var(--line)",
-          overflow: "hidden",
-          padding: "16px 0",
-          background: "var(--ink3)",
-        }}
-      >
+          className="marquee-wrap"
+          style={{
+            borderBottom: "1px solid var(--line)",
+            overflow: "hidden",
+            padding: "16px 0",
+            background: "var(--ink3)",
+          }}
+        >
         <div
           className="marquee-inner"
           style={{ display: "inline-flex", gap: 40 }}
@@ -926,6 +1031,7 @@ export default function Home() {
 
       {/* ════════════════════ ABOUT ════════════════════ */}
       <section
+        className="about-grid"
         style={{
           padding: "120px 60px",
           maxWidth: 1280,
@@ -1159,7 +1265,7 @@ export default function Home() {
 
       {/* ════════════════════ SKILLS ════════════════════ */}
       <section
-        ref={skillsRef}
+          ref={skillsRef}
         style={{
           padding: "100px 60px",
           background: "var(--ink2)",
@@ -1168,6 +1274,7 @@ export default function Home() {
       >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div
+            className="skills-header"
             style={{
               display: "flex",
               alignItems: "flex-end",
@@ -1339,6 +1446,7 @@ export default function Home() {
       >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div
+            className="projects-header"
             style={{
               display: "flex",
               alignItems: "flex-end",
@@ -1420,6 +1528,7 @@ export default function Home() {
           </div>
 
           <div
+            className="projects-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",

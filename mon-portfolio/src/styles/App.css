@@ -154,11 +154,17 @@ body {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .header { padding: 1.2rem 1.5rem; }
+  .bigprojects h1 { font-size: 2rem; }
+}
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+    padding: 1rem;
   }
   
   .mobile-menu-btn {
@@ -181,6 +187,7 @@ body {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
+    padding: 2rem 1rem;
   }
   
   .intro-text h1 {
@@ -194,5 +201,17 @@ body {
   
   .cards-container {
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
+
+  .card-content { padding: 1rem; }
+  .card-title { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 0.8rem; }
+  .introduction { padding: 1.5rem 0.8rem; gap: 1.5rem; }
+  .intro-text h1 { font-size: 1.6rem; }
+  .image { width: 160px; height: 160px; }
+  .cards-container { gap: 1rem; }
 }

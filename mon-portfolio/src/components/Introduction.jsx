@@ -1,5 +1,5 @@
 import React from 'react';
-import me from '../assets/me.jpg';
+import me from '../assets/me2.jpg';
 
 function Introduction() {
   return (

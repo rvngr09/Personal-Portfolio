@@ -21,6 +21,15 @@ const GLOBAL_CSS = `
     background-size:200px;}
   ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--accent3);border-radius:2px;}
   @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+  @media (max-width: 768px) {
+    .page-projects section { padding-left: 16px !important; padding-right: 16px !important; }
+    .page-projects .projects-hero { padding-top: 100px !important; padding-bottom: 60px !important; }
+    .page-projects .projects-filter-wrap { padding-left: 16px !important; padding-right: 16px !important; }
+    .page-projects .projects-grid-wrap { padding-left: 16px !important; padding-right: 16px !important; }
+    .page-projects .featured-grid { grid-template-columns: 1fr !important; }
+    .page-projects .regular-grid { grid-template-columns: 1fr !important; }
+    .page-projects footer { flex-direction: column !important; gap: 12px !important; text-align: center !important; padding: 24px 16px !important; }
+  }
 `;
 
 const ALL_PROJECTS = [
@@ -181,6 +190,7 @@ export default function Projects() {
   return (
     <div
       ref={root}
+      className="page-projects"
       style={{
         fontFamily: "var(--sans)",
         background: "var(--ink)",
@@ -193,6 +203,7 @@ export default function Projects() {
 
       {/* Hero */}
       <section
+        className="projects-hero"
         style={{
           padding: "140px 60px 80px",
           maxWidth: 1280,
@@ -295,7 +306,7 @@ export default function Projects() {
       </section>
 
       {/* Filters */}
-      <div style={{ padding: "0 60px 60px", maxWidth: 1280, margin: "0 auto" }}>
+      <div className="projects-filter-wrap" style={{ padding: "0 60px 60px", maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           {FILTERS.map((f) => (
             <button
@@ -327,11 +338,13 @@ export default function Projects() {
       {/* Projects grid */}
       <div
         ref={gridRef}
+        className="projects-grid-wrap"
         style={{ padding: "0 60px 120px", maxWidth: 1280, margin: "0 auto" }}
       >
         {/* Featured row */}
         {filter === "All" && (
           <div
+            className="featured-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1.6fr 1fr",
@@ -354,6 +367,7 @@ export default function Projects() {
 
         {/* Regular grid */}
         <div
+          className="regular-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",

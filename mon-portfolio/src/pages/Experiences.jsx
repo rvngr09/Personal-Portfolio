@@ -28,6 +28,15 @@ const GLOBAL_CSS = `
 .exp-nav-list::-webkit-scrollbar-thumb {
   background: var(--accent3);
 }
+  @media (max-width: 768px) {
+    .page-experiences section { padding-left: 16px !important; padding-right: 16px !important; }
+    .page-experiences .exp-hero { padding-top: 100px !important; padding-bottom: 60px !important; }
+    .page-experiences .exp-grid { grid-template-columns: 1fr !important; }
+    .page-experiences .exp-nav-list { max-height: none !important; border-right: none !important; border-bottom: 1px solid var(--line); overflow-y: visible !important; }
+    .page-experiences .exp-panel { padding: 24px 16px !important; }
+    .page-experiences .edu-grid { grid-template-columns: 1fr !important; }
+    .page-experiences footer { flex-direction: column !important; gap: 12px !important; text-align: center !important; padding: 24px 16px !important; }
+  }
 `;
 
 const EXPERIENCE = [
@@ -211,6 +220,7 @@ export default function Experience() {
   return (
     <div
       ref={root}
+      className="page-experiences"
       style={{
         fontFamily: "var(--sans)",
         background: "var(--ink)",
@@ -223,6 +233,7 @@ export default function Experience() {
 
       {/* Hero */}
       <section
+        className="exp-hero"
         style={{
           padding: "140px 60px 80px",
           maxWidth: 1280,
@@ -316,6 +327,7 @@ export default function Experience() {
 
       {/* Experience tabs */}
       <section
+        className="exp-grid"
         style={{
           padding: "0 60px 100px",
           maxWidth: 1280,
@@ -571,12 +583,13 @@ export default function Experience() {
             <div
               key={i}
               className="edu-card"
-              style={{
-                opacity: 0,
-                display: "grid",
-                gridTemplateColumns: "200px 1fr",
-                gap: 0,
-                border: "1px solid var(--line)",
+                className="edu-grid"
+                style={{
+                  opacity: 0,
+                  display: "grid",
+                  gridTemplateColumns: "200px 1fr",
+                  gap: 0,
+                  border: "1px solid var(--line)",
                 borderLeft: `3px solid ${e.color}`,
                 background: "var(--ink)",
               }}

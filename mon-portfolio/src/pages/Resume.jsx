@@ -42,6 +42,17 @@ const GLOBAL_CSS = `
     body { background: #fff !important; color: #000 !important; }
     .resume-sheet { box-shadow: none !important; border: none !important; }
   }
+  @media (max-width: 768px) {
+    .page-resume section { padding-left: 16px !important; padding-right: 16px !important; }
+    .page-resume .resume-hero { padding-top: 100px !important; padding-bottom: 40px !important; }
+    .page-resume .resume-sheet-wrap { padding-left: 16px !important; padding-right: 16px !important; }
+    .page-resume .resume-header { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 24px !important; }
+    .page-resume .resume-header-stats { text-align: left !important; flex-direction: row !important; flex-wrap: wrap !important; }
+    .page-resume .resume-body { grid-template-columns: 1fr !important; }
+    .page-resume .resume-main { padding: 32px 24px !important; border-right: none !important; }
+    .page-resume .resume-sidebar { padding: 32px 24px !important; }
+    .page-resume footer { flex-direction: column !important; gap: 12px !important; text-align: center !important; padding: 24px 16px !important; }
+  }
 `;
 
 const TECH_STACK = [
@@ -140,6 +151,7 @@ export default function Resume() {
   return (
     <div
       ref={root}
+      className="page-resume"
       style={{
         fontFamily: "var(--sans)",
         background: "var(--ink)",
@@ -152,6 +164,7 @@ export default function Resume() {
 
       {/* Hero */}
       <section
+        className="resume-hero"
         style={{
           padding: "140px 60px 60px",
           maxWidth: 1280,
@@ -305,6 +318,7 @@ export default function Resume() {
 
       {/* Resume sheet */}
       <div
+        className="resume-sheet-wrap"
         style={{ padding: "0 60px 120px", maxWidth: 1280, margin: "0 auto" }}
       >
         <div
@@ -318,6 +332,7 @@ export default function Resume() {
         >
           {/* Header strip */}
           <div
+            className="resume-header"
             style={{
               background: "var(--ink3)",
               padding: "48px 56px",
@@ -373,6 +388,7 @@ export default function Resume() {
               </div>
             </div>
             <div
+              className="resume-header-stats"
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -414,6 +430,7 @@ export default function Resume() {
 
           {/* Body */}
           <div
+            className="resume-body"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 320px",
@@ -422,6 +439,7 @@ export default function Resume() {
           >
             {/* Main column */}
             <div
+              className="resume-main"
               style={{
                 padding: "48px 56px",
                 borderRight: "1px solid var(--line)",
@@ -641,7 +659,7 @@ export default function Resume() {
             </div>
 
             {/* Sidebar */}
-            <div style={{ padding: "48px 36px", background: "var(--ink2)" }}>
+            <div className="resume-sidebar" style={{ padding: "48px 36px", background: "var(--ink2)" }}>
               {/* Tech stack */}
               <Section label="Tech Stack" color="var(--coral)">
                 <div

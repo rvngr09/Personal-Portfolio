@@ -13,7 +13,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import EmailIcon from "@mui/icons-material/Email";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import profilePhoto from '../assets/me.jpg'; // Adjust path based on your folder structure
+import profilePhoto from '../assets/me2.jpg';
 /* ── hide scrollbar in mobile dropdown ── */
 if (typeof document !== "undefined" && !document.getElementById("mnav-style")) {
   const s = document.createElement("style");
@@ -501,7 +501,7 @@ export default function Header() {
                       }}
                     >
                       <img
-                        src="/assets/me.jpg"
+                        src="/assets/me2.jpg"
                         alt="A"
                         style={{
                           width: "100%",

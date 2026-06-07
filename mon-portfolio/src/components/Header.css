@@ -44,3 +44,9 @@
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .drawer-container { font-size: 22px; }
+  .nav { padding: 16px 0; gap: 12px; }
+  .nav a, .nav button { font-size: 14px; }
+}

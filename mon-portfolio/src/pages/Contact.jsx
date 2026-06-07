@@ -23,6 +23,13 @@ const GLOBAL_CSS = `
   input::placeholder,textarea::placeholder{color:var(--text3);}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.85)}}
   @keyframes scanline{0%{top:-10%}100%{top:110%}}
+  @media (max-width: 768px) {
+    .page-contact section { padding-left: 16px !important; padding-right: 16px !important; }
+    .page-contact .contact-hero { padding-top: 100px !important; padding-bottom: 60px !important; }
+    .page-contact .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+    .page-contact .contact-form-grid { grid-template-columns: 1fr !important; }
+    .page-contact footer { flex-direction: column !important; gap: 12px !important; text-align: center !important; padding: 24px 16px !important; }
+  }
 `;
 
 const SOCIALS = [
@@ -121,6 +128,7 @@ export default function Contacts() {
   return (
     <div
       ref={root}
+      className="page-contact"
       style={{
         fontFamily: "var(--sans)",
         background: "var(--ink)",
@@ -133,6 +141,7 @@ export default function Contacts() {
 
       {/* Hero */}
       <section
+        className="contact-hero"
         style={{
           padding: "140px 60px 80px",
           maxWidth: 1280,
@@ -237,6 +246,7 @@ export default function Contacts() {
 
       {/* Main grid */}
       <section
+        className="contact-grid"
         style={{
           padding: "0 60px 120px",
           maxWidth: 1280,
@@ -439,6 +449,7 @@ export default function Contacts() {
               style={{ display: "flex", flexDirection: "column", gap: 16 }}
             >
               <div
+                className="contact-form-grid"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",

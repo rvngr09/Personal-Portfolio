@@ -29,6 +29,10 @@ const GLOBAL_CSS = `
   .gear-2 { animation: spinReverse 15s linear infinite; transform-origin: center; }
   .gear-3 { animation: spin 25s linear infinite; transform-origin: center; }
   .floating { animation: float 6s ease-in-out infinite; }
+  @media (max-width: 768px) {
+    .page-comingsoon section { padding: 60px 16px !important; }
+    .page-comingsoon footer { flex-direction: column !important; gap: 12px !important; text-align: center !important; padding: 24px 16px !important; }
+  }
 `;
 
 export default function ComingSoon() {
@@ -78,6 +82,7 @@ export default function ComingSoon() {
   return (
     <div
       ref={root}
+      className="page-comingsoon"
       style={{
         fontFamily: "var(--sans)",
         background: "var(--ink)",
