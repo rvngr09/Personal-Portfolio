@@ -1,9 +1,6 @@
-import React, { Suspense } from "react";
-import { createHashRouter } from "react-router-dom"; // ← Changé : createHashRouter au lieu de createBrowserRouter
+import React, { Suspense, useEffect } from "react";
+import { createHashRouter, Navigate, useLocation, Outlet } from "react-router-dom";
 import FacebookCircularProgress from "../components/LoadingSpinner.jsx";
-import { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
-import axios from 'axios';
 
 const Home = React.lazy(() => import("../pages/Home.jsx"));
 const Contacts = React.lazy(() => import("../pages/Contact.jsx"));
@@ -39,64 +36,69 @@ const ErrorPage = () => (
     </div>
 );
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return <Outlet />;
+}
+
 export const router = createHashRouter([
   {
-    path: "/",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <Home />
-      </Suspense>
-    ),
+    element: <ScrollToTop />,
     errorElement: <ErrorPage />,
-  },
-  
-  {
-    path: "/resume",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <Resume />
-      </Suspense>
-    ),
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/contacts",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <Contacts />
-      </Suspense>
-    ),
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/projects",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <Projects />
-      </Suspense>
-    ),
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/experiences",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <Experience />
-      </Suspense>
-    ),
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/comming-soon",
-    element: (
-      <Suspense fallback={<PageLoader />}>
-        <CommingSoon />
-      </Suspense>
-    ),
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "*",
-    element: <Navigate to="/" replace />,
+    children: [
+      {
+        path: "/",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/resume",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <Resume />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contacts",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <Contacts />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/projects",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <Projects />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/experiences",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <Experience />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/comming-soon",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <CommingSoon />
+          </Suspense>
+        ),
+      },
+      {
+        path: "*",
+        element: <Navigate to="/" replace />,
+      },
+    ],
   },
 ]);
